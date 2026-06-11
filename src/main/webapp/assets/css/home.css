@@ -1,0 +1,89 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    background-color: #111;
+    height: 90vh;
+}
+
+/* =========================
+   TEXT SECTION
+========================= */
+
+.hero-text {
+    width: 50%;
+}
+
+/* =========================
+   🔥 COLLAGE FIX (MAIN)
+========================= */
+
+.hero-collage {
+    width: 35%;
+    height: 50%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px; /* slightly more spacing */
+}
+
+/* =========================
+   IMAGE BOX
+========================= */
+
+.c-item {
+    height: 90px;
+    border-radius: 20px;      /* 🔥 smoother rounded box */
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1a1a1a;
+}
+
+/* =========================
+   🔥 IMAGE (INSIDE BOX)
+========================= */
+
+.c-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 15px;      /* 🔥 smooth inner rounding */
+}
+
+/* =========================
+   LAST IMAGE NORMAL
+========================= */
+
+.item5 {
+    grid-column: span 1;
+}
+
+/* =========================
+   🔥 HERO IMAGE (BIG IMAGE FIX)
+========================= */
+
+.hero-image {
+    width: 55%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 🔥 IMPORTANT PART FOR ROUNDED EDGES */
+.hero-image img {
+    width: 80%;
+    max-width: 800px;
+    
+    border-radius: 25px;     /* 🔥 main rounded edges */
+    object-fit: cover;
+    
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* 🔥 premium look */
+}

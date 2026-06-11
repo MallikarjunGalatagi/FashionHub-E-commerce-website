@@ -1,0 +1,106 @@
+/* =========================
+   LOGIN PAGE
+========================= */
+
+/* PAGE BACKGROUND */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+}
+
+/* LOGIN CONTAINER */
+.auth-container {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LOGIN CARD */
+.auth-form {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 20px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+/* TITLE */
+.auth-form h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/* INPUT FIELDS */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* PLACEHOLDER */
+.auth-form input::placeholder {
+    color: #666;
+}
+
+/* LOGIN BUTTON */
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: #ffd700;
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+/* BUTTON HOVER */
+.auth-form button:hover {
+    background: #ffcc00;
+    transform: scale(1.05);
+}
+
+/* ERROR MESSAGE */
+.error-msg {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* REGISTER LINK */
+.switch-text {
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.switch-text a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    .auth-form {
+        width: 90%;
+        padding: 25px;
+    }
+}

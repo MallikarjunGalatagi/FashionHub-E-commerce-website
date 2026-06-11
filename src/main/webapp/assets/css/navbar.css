@@ -1,0 +1,90 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #1a1a1a;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffd700;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* =========================
+   COMMON BUTTON STYLE
+========================= */
+
+.nav-btn {
+    background: linear-gradient(135deg, #ffd700, #ffcc00);
+
+    color: #000 !important;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    text-decoration: none !important;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.3s ease;
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.nav-btn:hover {
+    background: linear-gradient(135deg, #ffcc00, #ffaa00);
+
+    color: #000 !important;
+
+    transform: scale(1.05);
+
+    text-decoration: none !important;
+}

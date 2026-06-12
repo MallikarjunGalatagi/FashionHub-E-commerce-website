@@ -10,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/auth.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/footer.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/product-details.css">
@@ -44,8 +46,10 @@ alt="product">        </div>
             </p>
 
             <!-- TEMP PRICE -->
-            <h2 class="price">₹999</h2>
-
+            <!-- PRODUCT PRICE -->
+<h2 class="price">
+    ₹<%= String.format("%.2f", p.getPrice()) %>
+</h2>
             <!-- ACTION -->
 <form action="${pageContext.request.contextPath}/cart" method="post">
     <input type="hidden" name="productId" value="<%= p.getProductId() %>">

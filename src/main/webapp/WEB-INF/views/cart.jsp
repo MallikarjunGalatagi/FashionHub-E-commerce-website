@@ -51,16 +51,19 @@
         <div class="cart-item">
 
             <!-- IMAGE -->
-<img 
-src="<%= request.getContextPath() %>/assets/images/<%= p.getImageUrl().replace("images/", "") %>" 
-alt="product">
+            <img
+                src="<%= request.getContextPath() %>/assets/images/<%= p.getImageUrl().replace("images/", "") %>"
+                alt="product">
 
             <!-- DETAILS -->
             <div class="cart-details">
 
                 <h3><%= p.getProductName() %></h3>
 
-                <p>Price: &#8377;<%= String.format("%.2f", unitPrice) %></p>
+                <p>
+                    Price:
+                    &#8377;<%= String.format("%.2f", unitPrice) %>
+                </p>
 
                 <p>
                     Quantity:
@@ -69,7 +72,10 @@ alt="product">
                     <a href="${pageContext.request.contextPath}/cart?action=increase&productId=<%= item.getProductId() %>">+</a>
                 </p>
 
-                <p>Total: &#8377;<%= String.format("%.2f", total) %></p>
+                <p>
+                    Total:
+                    &#8377;<%= String.format("%.2f", total) %>
+                </p>
 
             </div>
 
@@ -81,6 +87,8 @@ alt="product">
 
         </div>
 
+        <hr>
+
         <%
             }
         %>
@@ -88,17 +96,23 @@ alt="product">
         <!-- SUMMARY -->
         <div class="cart-summary">
 
-            <h2>Grand Total: &#8377;<%= String.format("%.2f", grandTotal) %></h2>
+            <h2>
+                Grand Total:
+                &#8377;<%= String.format("%.2f", grandTotal) %>
+            </h2>
 
-            <div style="margin-top: 15px;">
+            <!-- BUTTONS -->
+            <div style="margin-top:20px; display:flex; justify-content:flex-end; gap:15px;">
 
                 <!-- CONTINUE SHOPPING -->
-                <a href="${pageContext.request.contextPath}/products" class="btn">
+                <a href="${pageContext.request.contextPath}/products"
+                   class="nav-btn">
                     Continue Shopping
                 </a>
 
-                <!-- CHECKOUT BUTTON -->
-                <a href="${pageContext.request.contextPath}/checkout" class="btn" style="margin-left:10px;">
+                <!-- CHECKOUT -->
+                <a href="${pageContext.request.contextPath}/checkout"
+                   class="nav-btn">
                     Checkout
                 </a>
 
@@ -113,9 +127,12 @@ alt="product">
         <!-- EMPTY CART -->
         <p class="empty-cart">Your cart is empty</p>
 
-        <a href="${pageContext.request.contextPath}/products" class="btn">
-            Continue Shopping
-        </a>
+        <div style="text-align:center; margin-top:20px;">
+            <a href="${pageContext.request.contextPath}/products"
+               class="nav-btn">
+                Continue Shopping
+            </a>
+        </div>
 
         <%
             }

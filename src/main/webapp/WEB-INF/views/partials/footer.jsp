@@ -11,7 +11,7 @@
         <!-- LINKS -->
         <div class="footer-section">
             <h3>Quick Links</h3>
-            <a href="${pageContext.request.contextPath}/index.jsp">Home</a>
+            <a href="${pageContext.request.contextPath}/index.html">Home</a>
             <a href="${pageContext.request.contextPath}/products">Shop</a>
         </div>
 

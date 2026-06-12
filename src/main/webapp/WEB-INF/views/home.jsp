@@ -35,67 +35,12 @@
         </div>
 
         <div class="hero-image">
-            <img src="${pageContext.request.contextPath}/assets/images/hero.png"
+            <img src="${pageContext.request.contextPath}/assets/images/fashion_design.png"
                  alt="Fashion Banner">
         </div>
     </section>
 
-    <!-- 🔥 CATEGORIES -->
-    <section class="categories">
-        <h2>Categories</h2>
-
-        <div class="category-container">
-
-            <%
-                List<Category> categories = (List<Category>) request.getAttribute("categories");
-
-                if (categories != null) {
-                    for (Category c : categories) {
-            %>
-
-                <div class="category-card">
-                    <h3><%= c.getCategoryName() %></h3>
-                </div>
-
-            <%
-                    }
-                }
-            %>
-
-        </div>
-    </section>
-
-    <!-- 🔥 LATEST PRODUCTS -->
-    <section class="products">
-        <h2>Latest Products</h2>
-
-        <div class="product-container">
-
-            <%
-                List<Product> products = (List<Product>) request.getAttribute("latestProducts");
-
-                if (products != null) {
-                    for (Product p : products) {
-            %>
-
-                <div class="product-card">
-                    <img src="${pageContext.request.contextPath}/assets/images/<%= p.getImageUrl() %>" alt="product">
-
-                    <h3><%= p.getProductName() %></h3>
-                    <p><%= p.getDescription() %></p>
-
-                    <a href="${pageContext.request.contextPath}/product?id=<%= p.getProductId() %>" class="btn">
-                        View
-                    </a>
-                </div>
-
-            <%
-                    }
-                }
-            %>
-
-        </div>
-    </section>
+  
 
     <!-- ✅ FOOTER -->
     <%@ include file="partials/footer.jsp" %>

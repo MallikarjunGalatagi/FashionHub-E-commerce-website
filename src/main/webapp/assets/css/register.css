@@ -21,6 +21,13 @@
     box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
 }
 
+/* CENTER FORM CONTENT */
+.register-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* TITLE */
 .register-box h2 {
     color: #ffffff;
@@ -28,18 +35,54 @@
     font-size: 26px;
 }
 
-/* INPUT FIELDS */
+/* =========================
+   INPUT FIELDS
+========================= */
 .register-box input,
-.register-box select,
-.register-box textarea {
+.register-box textarea,
+.register-box select {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 12px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
     border-radius: 8px;
-    border: none;
+    border: 2px solid transparent;
     outline: none;
     background: #d9d9d9;
-    font-size: 14px;
+    color: #000;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* PLACEHOLDER */
+.register-box input::placeholder,
+.register-box textarea::placeholder {
+    color: #666;
+}
+
+/* HOVER & FOCUS EFFECT */
+.register-box input:hover,
+.register-box input:focus,
+.register-box textarea:hover,
+.register-box textarea:focus,
+.register-box select:hover,
+.register-box select:focus {
+    background: #ffffff;
+    border-color: #ffd700;
+    box-shadow:
+        0 0 10px rgba(255, 215, 0, 0.5),
+        0 0 20px rgba(255, 215, 0, 0.2);
+    transform: scale(1.02);
+}
+
+/* FIX SELECT BOX */
+.register-box select {
+    height: 48px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
 }
 
 /* TEXTAREA */
@@ -48,7 +91,9 @@
     height: 70px;
 }
 
-/* REGISTER BUTTON */
+/* =========================
+   REGISTER BUTTON
+========================= */
 .register-box button {
     width: 100%;
     padding: 12px;
@@ -57,24 +102,30 @@
     border: none;
     border-radius: 25px;
     font-weight: bold;
+    font-size: 15px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 /* BUTTON HOVER */
 .register-box button:hover {
     background: #ffcc00;
     transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
-/* ERROR MESSAGE */
+/* =========================
+   ERROR MESSAGE
+========================= */
 .error {
     color: #ff4d4d;
     margin-bottom: 10px;
     font-size: 14px;
 }
 
-/* LOGIN LINK */
+/* =========================
+   LOGIN LINK
+========================= */
 .register-footer {
     margin-top: 15px;
     color: #ccc;
@@ -85,8 +136,12 @@
     color: #ffd700;
     text-decoration: none;
     font-weight: 500;
+    transition: 0.3s ease;
 }
 
 .register-footer a:hover {
+    color: #ffcc00;
     text-decoration: underline;
 }
+
+

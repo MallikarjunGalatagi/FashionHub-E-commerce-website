@@ -104,3 +104,40 @@ body {
         padding: 25px;
     }
 }
+
+
+/* INPUT FIELDS */
+/* INPUT FIELDS */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    outline: none;
+    background: #d9d9d9;
+    color: #000;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease !important;
+}
+
+/* PLACEHOLDER */
+.auth-form input::placeholder {
+    color: #666;
+}
+
+/* HOVER */
+.auth-form input:hover {
+    background: #ffffff !important;
+    border: 2px solid #ffd700 !important;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
+}
+
+/* FOCUS */
+.auth-form input:focus {
+    background: #ffffff !important;
+    border: 2px solid #ffd700 !important;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7) !important;
+}

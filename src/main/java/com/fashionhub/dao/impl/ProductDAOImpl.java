@@ -13,7 +13,7 @@ public class ProductDAOImpl implements ProductDAO {
     // 🔹 ADD PRODUCT
     @Override
     public boolean addProduct(Product product) {
-        String sql = "INSERT INTO products (category_id, product_name, description, image_url) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO products (category_id, product_name, description, image_url, price) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -22,6 +22,7 @@ public class ProductDAOImpl implements ProductDAO {
             ps.setString(2, product.getProductName());
             ps.setString(3, product.getDescription());
             ps.setString(4, product.getImageUrl());
+            ps.setDouble(5, product.getPrice());
 
             return ps.executeUpdate() > 0;
 
@@ -42,17 +43,9 @@ public class ProductDAOImpl implements ProductDAO {
              PreparedStatement ps = con.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
 
-            if (con == null) {
-                System.out.println(" DB CONNECTION FAILED");
-            } else {
-                System.out.println("✅ DB CONNECTED");
-            }
-
             while (rs.next()) {
                 list.add(mapProduct(rs));
             }
-
-            System.out.println("Products fetched: " + list.size());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -152,10 +145,10 @@ public class ProductDAOImpl implements ProductDAO {
         return list;
     }
 
-    // 🔹 UPDATE PRODUCT (FIX FOR YOUR ERROR)
+    // 🔹 UPDATE PRODUCT
     @Override
     public boolean updateProduct(Product product) {
-        String sql = "UPDATE products SET category_id=?, product_name=?, description=?, image_url=? WHERE product_id=?";
+        String sql = "UPDATE products SET category_id=?, product_name=?, description=?, image_url=?, price=? WHERE product_id=?";
 
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -164,7 +157,8 @@ public class ProductDAOImpl implements ProductDAO {
             ps.setString(2, product.getProductName());
             ps.setString(3, product.getDescription());
             ps.setString(4, product.getImageUrl());
-            ps.setInt(5, product.getProductId());
+            ps.setDouble(5, product.getPrice());
+            ps.setInt(6, product.getProductId());
 
             return ps.executeUpdate() > 0;
 
@@ -195,6 +189,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     // 🔧 COMMON MAPPER METHOD
     private Product mapProduct(ResultSet rs) throws SQLException {
+
         Product p = new Product();
 
         p.setProductId(rs.getInt("product_id"));
@@ -202,6 +197,7 @@ public class ProductDAOImpl implements ProductDAO {
         p.setProductName(rs.getString("product_name"));
         p.setDescription(rs.getString("description"));
         p.setImageUrl(rs.getString("image_url"));
+        p.setPrice(rs.getDouble("price"));   // ✅ THIS FIXES THE PRICE ISSUE
 
         return p;
     }

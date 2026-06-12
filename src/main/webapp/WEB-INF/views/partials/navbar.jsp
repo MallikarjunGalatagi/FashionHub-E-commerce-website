@@ -4,7 +4,7 @@
 
     <!-- LOGO -->
     <div class="logo">
-        <a href="${pageContext.request.contextPath}/index.jsp">
+<a href="${pageContext.request.contextPath}/index.html">
             FASHION<span>HUB</span>
         </a>
     </div>
@@ -12,7 +12,7 @@
     <!-- NAV LINKS -->
     <div class="nav-links">
 
-        <a href="${pageContext.request.contextPath}/index.jsp"
+        <a href="${pageContext.request.contextPath}/index.html"
            class="nav-btn">
             Home
         </a>

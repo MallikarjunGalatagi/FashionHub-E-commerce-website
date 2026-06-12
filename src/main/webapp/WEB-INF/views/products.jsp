@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/navbar.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/footer.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/products.css"></head>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/products.css">
+</head>
 
 <body>
 
@@ -35,10 +36,16 @@
             <h3>Categories</h3>
 
             <ul>
-                <li><a href="${pageContext.request.contextPath}/products">All</a></li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/products">
+                        All
+                    </a>
+                </li>
 
                 <%
-                    List<Category> categories = (List<Category>) request.getAttribute("categories");
+                    List<Category> categories =
+                        (List<Category>) request.getAttribute("categories");
+
                     if (categories != null) {
                         for (Category c : categories) {
                 %>
@@ -53,6 +60,7 @@
                         }
                     }
                 %>
+
             </ul>
         </div>
 
@@ -60,7 +68,8 @@
         <div class="products">
 
             <%
-                List<Product> products = (List<Product>) request.getAttribute("products");
+                List<Product> products =
+                    (List<Product>) request.getAttribute("products");
 
                 if (products != null && !products.isEmpty()) {
                     for (Product p : products) {
@@ -68,35 +77,80 @@
 
             <div class="product-card">
 
-                <!-- IMAGE BOX -->
-                <div class="image-box">
-                    <img 
-                        src="<%= request.getContextPath() %>/assets/images/<%= p.getImageUrl().replace("images/", "") %>" 
-                        alt="product">
-                </div>
+                <!-- PRODUCT IMAGE -->
+          <!-- PRODUCT IMAGE -->
+<div style="
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    border-radius:20px;
+    background:#222;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:10px;
+">
+    <img
+        src="<%= request.getContextPath() %>/assets/images/<%= p.getImageUrl().replace("images/", "") %>"
+        alt="product"
+        style="
+            max-width:100%;
+            max-height:100%;
+            width:auto;
+            height:auto;
+            object-fit:contain;
+            border-radius:16px;
+            transition:transform 0.3s ease; ">
+</div>
 
                 <!-- PRODUCT INFO -->
                 <div class="product-info">
 
+                    <!-- PRODUCT NAME -->
                     <h3><%= p.getProductName() %></h3>
 
+                    <!-- DESCRIPTION -->
                     <p>
-                        <%= (p.getDescription() != null && p.getDescription().length() > 40) 
-                            ? p.getDescription().substring(0, 40) + "..." 
+                        <%= (p.getDescription() != null &&
+                             p.getDescription().length() > 40)
+                            ? p.getDescription().substring(0, 40) + "..."
                             : p.getDescription() %>
+                    </p>
+
+                    <!-- PRODUCT PRICE -->
+                    <p style="
+                        color:#ffd700;
+                        font-weight:bold;
+                        font-size:20px;
+                        margin:15px 0;
+                    ">
+                        Price: &#8377;<%= String.format("%.2f", p.getPrice()) %>
                     </p>
 
                     <!-- BUTTONS -->
                     <div class="btn-group">
 
-                        <a href="${pageContext.request.contextPath}/product?id=<%= p.getProductId() %>" class="btn">
+                        <a href="${pageContext.request.contextPath}/product?id=<%= p.getProductId() %>"
+                           class="btn">
                             View Details
                         </a>
 
-                        <form action="${pageContext.request.contextPath}/cart" method="post">
-                            <input type="hidden" name="action" value="add">
-                            <input type="hidden" name="productId" value="<%= p.getProductId() %>">
-                            <button type="submit" class="btn">Add to Cart</button>
+                        <form action="${pageContext.request.contextPath}/cart"
+                              method="post"
+                              style="display:inline;">
+
+                            <input type="hidden"
+                                   name="action"
+                                   value="add">
+
+                            <input type="hidden"
+                                   name="productId"
+                                   value="<%= p.getProductId() %>">
+
+                            <button type="submit" class="btn">
+                                Add to Cart
+                            </button>
+
                         </form>
 
                     </div>

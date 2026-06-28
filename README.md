@@ -46,7 +46,7 @@ Users can log in using:
 * Username or Email
 * Password
 
-🛒 oduct Catalog
+🛒 Product Catalog
 
 Users can:
 * Browse all available fashion products.
